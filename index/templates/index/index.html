@@ -1,0 +1,201 @@
+{% load static  %}
+
+
+
+<!DOCTYPE html>
+<html lang="de-DE" prefix="og: http://ogp.me/ns#">
+    <meta charset="UTF-8">
+    <title>Mridul chaturvedi|Portfolio</title>
+    <link rel="stylesheet" type="text/css" href="css/normalize.min.css" media="all" />
+    <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{% static 'index/flexboxgrid.css'%}" media="all" />
+    <link rel="stylesheet" type="text/css" href="{% static 'index/theme.css'%}" media="all" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+<body>
+    <header class="fade-in">
+        <div class="navigation-bar flex middle-xs">
+            <img src="{% static 'media/mridul.svg' %}" class="logo">
+            <nav class="end-xs">
+                <ul>
+                    <li><a href="#about-us">About</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="hero flex middle-xs" style="background-image: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.7)), url('{% static 'media/mrdl.jpg' %}')">
+    <div class="hero-text ">
+        <h1>Mridul chaturvedi's</h1>
+       <p>portfolio/django project</p>
+ 		<a href="certificates" class="btn btn-head"> <h2 class="white">certificates</h2></a> 
+    </div>
+</div>
+</header>
+<div class="wrapper">
+    <main>
+        <section class="intro" id="about-us">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md">
+                        <h2 class="section-title">About me</h2>
+                    </div>
+                </div>
+                <div class="row margin-bottom ">
+                    <div class="col-md">
+                        <p class="highlight">I am an enthusiastic software engineer/web developer/Data analyst/Data and Machine Geek specilised in python and GO lang. very much exited to apply my skills in working environment with professionals. I am graduated from <a href="https://maujaipur.org/">Maharishi arvind university </a> with Bachlor of Computer Applications as a subject. </p>
+                        <p class="author">- Mridul chaturvedi</p>
+                    </div>
+                </div>
+                <div class="row team center-xs">
+                 
+                    <div class="col-md">
+                        <div class="hover-outer-box">
+                            <img src="{% static 'media/mypic.jpg' %}">
+                            <div class="hover-inner-box">
+                                <div class="hover-content">
+                                    <h3>Mridul chaturvedi</h3>
+                                    <p>follow /reach me on linkdin or instagram </p>
+                                    <a href="#!" target="blank" rel="noopener"><img src="{% static 'media/linkedin.svg' %}" class="team-icon"></a> <a href="https://www.instagram.com/the_bitch_detector_/" target="blank" rel="noopener"><img src="{% static 'media/instagram.svg' %}" class="team-icon"></a>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="team-name">Mridul chaturvedi<br/><span class="position">Developer</span></p>
+                    </div>
+                    
+                </div>
+            </div>
+        </section>
+        <hr/>
+        
+        <section class="cta middle-xs">
+            <div class="container">
+                <div class="row middle-md">
+                    <div class="col-md-8">
+                        <h2>Extra certificates</h2>
+                        <p>there are some of courses i done from online plateforms like python,javascript,GO lang Etc</p>
+                        <a href=""><button class="light">have a look</button></a>
+                    </div>
+                    <div class="col-md-4">
+                        <img src="{% static 'media/cta-display.png' %}" class="display">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        
+        <section class="portfolio" id="portfolio">
+            <div class="container">
+                <div class="row center-xs">
+                    <div class="col-md">
+                        <h2 class="section-title">Portfolio</h2>
+                        <hr class="thin">
+                        <p>Projects that i have created for companies or for self.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="padding-small">
+                <div class="row margin-bottom-small">
+                    
+                  {% for item in repos %} 
+
+                    <div class="col-md-4">
+                        <div class="hover-outer-box">
+                            <img src="{{ item.image }}">
+                            <div class="hover-inner-box">
+                                <div class="hover-content">
+                                    <h3>{{item.title}}</h3>
+                                    <p>{{ item.mindes }}</p>
+                                    <a href=""><button class="light">have a look</button></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                  {% endfor  %}  
+
+                    
+            </section>
+
+
+
+            <section class="cta">
+                <div class="container">
+                    <div class="row center-xs">
+                        <div class="col-md">
+                            <h2>Resume/Cv</h2>
+                            <p>Here is my Resume if you can Download in Pdf formate.</p>
+                            <a href = "{% static 'media/MridulsResume.pdf' %}"  download><button class="light" >Downloade Resume</button></a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+                
+
+
+
+                <h2 class="section-title"><center>HIRE ME</center></h2>       
+            <section class="contact" id="contact">
+                
+
+
+                    <form method="post">
+                         {% csrf_token %}
+                         {{form.as_p}}
+
+
+                        <div class="row margin-bottom-small center-xs">
+                        		
+                            <div class="col-md padding-small">
+                                <div class="row">
+                                    <div class="col-md">
+
+                                        <input placeholder="Enter Your Name" type="text" name="name"  class="margin-bottom-small">
+                                        <input placeholder="Enter Your Email" type="email" name="email"  value="">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md padding-small">
+                                <textarea placeholder="Your Message" name="message" rows="8" class="margin-bottom-small"></textarea>
+                                <input type="submit" value="Submit">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </section>
+        </main>
+    </div>
+    <footer>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-md center-xs">
+                    
+                    <div class="container">
+                    <div class="row">
+                        <div class="col-md center-xs">
+                            <h2 class="section-title">Contact</h2>
+                            <hr class="thin">
+                        </div>
+                    </div>
+                    <div class="row margin-bottom-small center-xs">
+                        <div class="col-md"><h4>Call me</h4>+91 9983-9820-66</div><br>
+                        <div class="col-md"><h4>My Nest</h4><h6>CITY:-Jaipur <br> STATE:- Rajasthan <br>COUNTRY:- India <br> PIN:-302003 </h6></div>
+                        <div class="col-md"><h4>Email</h4><a href="mailto:mrdlchaturvedi@gmail.com">mrdlchaturvedi@gmail.com</a></div>
+                    </div>
+                    
+               
+              </div>     
+            </div
+            
+            </div>
+        </div>
+    </footer>
+
+
+</body>
+</html> 
+ 
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+ <script src="{% static 'js/script.js' %}" defer></script>
