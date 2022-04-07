@@ -17,6 +17,7 @@ class certificate(models.Model):
     mindes = models.TextField(max_length=600)
     image = models.CharField(max_length=600)
     by = models.TextField(max_length=600)
+    url = models.CharField(max_length=200,default='#')
     
 
    
