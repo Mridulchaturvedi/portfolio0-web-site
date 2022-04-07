@@ -31,7 +31,7 @@ SECRET_KEY = 'z&voh-0&3dbne4=7lm*ej782#g)$wpn-v9^51-qvqh5#(i&etl'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['quiet-anchorage-59247.herokuapp.com', 'mridulchaturvedi.tk']
 
 
 # Application definition
