@@ -1,11 +1,13 @@
 # from django.shortcuts import render
 # from django.http import HttpResponse
 import os
-from .models import repo , certificate
+from .models import repo , certificate , blogslinks
 from django.shortcuts import render, redirect
 from .forms import ContactForm
 from django.core.mail import send_mail, BadHeaderError
 from django.http import HttpResponse
+from PyPDF2 import PdfFileReader
+# import weasyprint
 
 # Create your views here.
 
@@ -45,9 +47,17 @@ def certifi(request):
     certs = certificate.objects.all()
     
     return render(request,'index/certificates.html',{'certs':certs});
+
+
+def blogslink(request):
+    blogs = blogslinks.objects.all()
+    return render(request,'index/blog.html',{'blogs':blogs});
     
 
 
+def view_blog(request,id):
+    blogs_obj = blogslinks.objects.get(id=id)
+    return render(request,'index/blog_detail.html',{'blogs_obj':blogs_obj});
 
 
 

@@ -561,7 +561,7 @@ a.bg-danger:hover {
 .page-header {
   padding-bottom: 15px;
   padding-top: 15px;
-  margin: 40px 0 20px;
+  margin: 100px 0 20px;
   border-bottom: 1px solid rgb(172, 235, 172);
 }
 ul,
@@ -3738,7 +3738,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 }
 .navbar-fixed-top {
   top: 0;
-  border-width: 0 0 1px;
+  border-width: 17 17 1px;
 }
 .navbar-fixed-bottom {
   bottom: 0;
@@ -3748,9 +3748,9 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 .navbar-brand {
   float: center;
   height: 20px;
-  padding: 15px 15px;
-  font-size: 35px;
-  line-height: 20px;
+  padding: 24px 24px;
+  font-size: 40px;
+  line-height: 56px;
 }
 .navbar-brand:hover,
 .navbar-brand:focus {
@@ -4028,7 +4028,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   color: #333;
 }
 .navbar-inverse {
-  background-color: #222;
+  background-color: #080808;
   border-color: #080808;
 }
 .navbar-inverse .navbar-brand {

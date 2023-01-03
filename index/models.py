@@ -20,4 +20,15 @@ class certificate(models.Model):
     url = models.CharField(max_length=200,default='#')
     
 
+class blogslinks(models.Model):
+    
+    image = models.CharField(max_length=200)
+    title = models.CharField(max_length= 200)
+    mindes = models.TextField(max_length=500)
+    url = models.CharField(max_length=200,default='#')
+    # file = models.FileField(upload_to='pdfs/')
+
+    
+    
+
    
